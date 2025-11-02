@@ -1,17 +1,9 @@
-# n8n'in en son resmi Docker imajını kullan
-FROM n8nio/n8n
+# n8n'in resmi Docker imajını temel al
+FROM n8nio/n8n:latest
 
-# n8n için varsayılan portu ayarla
+# Uygulama içinde çalışacağı portu ayarla
 ENV N8N_PORT=5678
 EXPOSE 5678
 
-# (Opsiyonel) Eğer özelleştirmeleriniz varsa buraya ekleyebilirsiniz.
-# Örneğin, özel bir düğüm eklemek isterseniz:
-# RUN npm install -g n8n-nodes-mycustomnode
-
-# Eğer başka özel dosyalarınız varsa kopyalayın
-# COPY package.json .
-# COPY .n8n .n8n
-
-# n8n'i başlat
+# N8N'i başlat
 CMD ["n8n", "start"]
